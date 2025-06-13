@@ -1,10 +1,16 @@
-# mles-project-01
+# Especialización MLE - Proyecto 01
 
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
 Este proyecto corresponde al curso MLE 1 de la Especialización MLE.
+
+## Problemática
+Se requiere predecir el costo de un vuelo de avión en rupias indias para competir en el mercado de aerolíneas en India.
+
+## Diagrama de flujo
+<img src="https://drive.google.com/file/d/1f8NskgmyPZiPC9Ou3LkwxkgaytN9-Wxs/view?usp=drive_link">
 
 ## Project Organization
 

@@ -7,10 +7,10 @@
 Este proyecto corresponde al curso MLE 1 de la Especialización MLE.
 
 ## Problemática
-Se requiere predecir el costo de un vuelo de avión en rupias indias para competir en el mercado de aerolíneas en India.
+Se requiere predecir el costo de un vuelo de avión para competir en el mercado de aerolíneas en India.
 
 ## Diagrama de flujo
-<img src="https://drive.google.com/file/d/1f8NskgmyPZiPC9Ou3LkwxkgaytN9-Wxs/view?usp=drive_link">
+<img src="https://drive.google.com/file/d/1f8NskgmyPZiPC9Ou3LkwxkgaytN9-Wxs/preview" width="640" height="480" allow="autoplay">
 
 ## Project Organization
 

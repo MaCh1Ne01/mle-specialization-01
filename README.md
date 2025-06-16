@@ -10,7 +10,7 @@ Este proyecto corresponde al curso MLE 1 de la Especialización MLE.
 Se requiere predecir el costo de un vuelo de avión para competir en el mercado de aerolíneas en India.
 
 ## Diagrama de flujo
-<img src="https://drive.google.com/uc?export=view&id=11SLlZ6p5BR_8izMYnEFX-__W597HC_uX1" allow="autoplay">
+<img src="https://drive.google.com/uc?export=view&id=1SLlZ6p5BR_8izMYnEFX-__W597HC_uX1" allow="autoplay">
 
 ## Project Organization
 

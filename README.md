@@ -12,6 +12,23 @@ Se requiere predecir el costo de un vuelo de avión para competir en el mercado 
 ## Diagrama de flujo
 <img src="https://drive.google.com/uc?export=view&id=1SLlZ6p5BR_8izMYnEFX-__W597HC_uX1" allow="autoplay">
 
+## Descripción del dataset
+El conjunto de datos fue extraído de la página web "EaseMyTrip", la cual contiene información sobre reserva de vuelos para viajes entre las 6 principales ciudades metropolitanas de la India. Dicha recopilación se realizo en 2 partes, una para vuelos de clase económica y otra para vuelos de clase ejecutiva, recolectando un total de 300261 registros y 11 características, las cuales se detallan a continuación:
+
+| Feature          | Descripción                                                                                                            |
+|:----------------:|:----------------------------------------------------------------------------------------------------------------------:|
+| Airline          | Nombre de la aerolínea, es una feature categórica y tiene 6 valores diferentes.                                        |
+| Flight           | Código del vuelo de avión, es una feature categórica.                                                                  |
+| Source City      | Ciudad de origen del vuelo, es una feature categórica y tiene 6 valores diferentes.                                    |
+| Departure Time   | Intervalo del día que representa la hora de salida del vuelo, es una feature categórica y tiene 6 valores.diferentes.  |
+| Stops            | Número de paradas durante el vuelo, es una feature categórica y tiene 3 valores diferentes.                            |
+| Arrival Time     | Intervalo del día que representa la hora de llegada del vuelo, es una feature categórica y tiene 6 valores diferentes. |
+| Destination City | Ciudad de destino del vuelo, es una feature categórica y tiene 6 valores diferentes.                                   |
+| Class            | Clase del asiento del vuelo, es una feature categórica y tiene 2 valores diferentes.                                   |
+| Duration         | Tiempo de duración del vuelo en horas, es una feature numérica.                                                        |
+| Days Left        | Días restantes para la fecha del vuelo contabilizados desde la fecha de reservación, es una feature numérica.          |
+| Price            | Precio en rupias indias del ticket de avión, es la variable a predecir.                                                |
+
 ## Project Organization
 
 ```

@@ -6,7 +6,7 @@
 
 Este proyecto corresponde al curso MLE 1 de la Especialización MLE.
 
-## EStructura del proyecto
+## Estructura del proyecto
 
 ```
 ├── LICENSE            <- Open-source license if one is chosen
@@ -57,10 +57,8 @@ Este proyecto corresponde al curso MLE 1 de la Especialización MLE.
     └── plots.py                <- Code to create visualizations
 ```
 
---------
-
 ## Problemática
-Se requiere predecir el costo de un vuelo de avión para competir en el mercado de aerolíneas en India.
+Se requiere implementar un modelo de regresión para predecir el costo de un vuelo de avión y competir en el mercado de aerolíneas en India.
 
 ## Diagrama de flujo
 <img src="https://drive.google.com/uc?export=view&id=1SLlZ6p5BR_8izMYnEFX-__W597HC_uX1" allow="autoplay">
@@ -73,7 +71,7 @@ El conjunto de datos fue extraído de la página web "EaseMyTrip", la cual conti
 | Airline          | Nombre de la aerolínea, es una feature categórica y tiene 6 valores diferentes.                                        |
 | Flight           | Código del vuelo de avión, es una feature categórica.                                                                  |
 | Source City      | Ciudad de origen del vuelo, es una feature categórica y tiene 6 valores diferentes.                                    |
-| Departure Time   | Intervalo del día que representa la hora de salida del vuelo, es una feature categórica y tiene 6 valores.diferentes.  |
+| Departure Time   | Intervalo del día que representa la hora de salida del vuelo, es una feature categórica y tiene 6 valores diferentes.  |
 | Stops            | Número de paradas durante el vuelo, es una feature categórica y tiene 3 valores diferentes.                            |
 | Arrival Time     | Intervalo del día que representa la hora de llegada del vuelo, es una feature categórica y tiene 6 valores diferentes. |
 | Destination City | Ciudad de destino del vuelo, es una feature categórica y tiene 6 valores diferentes.                                   |

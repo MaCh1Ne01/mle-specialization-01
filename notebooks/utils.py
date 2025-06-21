@@ -1,8 +1,12 @@
+import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 from typing import List, Dict
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_squared_error, r2_score
 
 def object_features_report(dataframe:pd.DataFrame):
     type_features = dataframe.select_dtypes(include=["object"]).columns
@@ -72,3 +76,37 @@ def scaling_numerical_features(features_train:pd.DataFrame, features_test:pd.Dat
 
     print("Min Max Scaling done.")
     return features_train, features_test
+
+
+def graphing_correlation_matrix(dataframe:pd.DataFrame, zoom:int=1):
+    plt.figure(figsize=(4*zoom, 3*zoom))
+    sns.heatmap(
+        dataframe.corr(),
+        annot=True,
+        cmap="coolwarm",
+        vmin=-1,
+        vmax=1,
+        linewidths=0.5,
+    )
+    plt.title("Correlation Matrix")
+
+
+def evaluating_model(model:any, model_name:str, X:pd.DataFrame, y:pd.DataFrame, label_data:str):
+    y_pred = model.predict(X)
+    mse = mean_squared_error(y, y_pred)
+    r2 = r2_score(y, y_pred)
+
+    print(f"**********{model_name} Metrics ({label_data}):**********")
+    print(f"Root Mean Squared Error: {np.sqrt(mse):.4f}")
+    print(f"Square R: {r2:.4f}")
+
+
+def visualizing_model_performance(model:any, model_name:str, X:pd.DataFrame, y:pd.DataFrame, label_data:str):
+    plt.figure(figsize=(6, 4))
+    plt.scatter(y, model.predict(X), alpha=0.5, label=label_data, s=10)
+    plt.plot([y.min(), y.max()], [y.min(), y.max()], color="red", linestyle="--", linewidth=2, label="Perfect Prediction")
+    plt.xlabel("Real Prices")
+    plt.ylabel("Predicted Prices")
+    plt.title(f"{model_name} - Real vs Predicted Prices - {label_data}")
+    plt.legend()
+    plt.grid(True)

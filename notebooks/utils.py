@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error, r2_score
+from constants import *
 
 def object_features_report(dataframe:pd.DataFrame):
     type_features = dataframe.select_dtypes(include=["object"]).columns
@@ -93,12 +94,13 @@ def graphing_correlation_matrix(dataframe:pd.DataFrame, zoom:int=1):
 
 def evaluating_model(model:any, model_name:str, X:pd.DataFrame, y:pd.DataFrame, label_data:str):
     y_pred = model.predict(X)
-    mse = mean_squared_error(y, y_pred)
+    rmse = np.sqrt(mean_squared_error(y, y_pred))
     r2 = r2_score(y, y_pred)
 
     print(f"**********{model_name} Metrics ({label_data}):**********")
-    print(f"Root Mean Squared Error: {np.sqrt(mse):.4f}")
+    print(f"Root Mean Squared Error: {rmse:.4f}")
     print(f"Square R: {r2:.4f}")
+    return rmse, r2
 
 
 def visualizing_model_performance(model:any, model_name:str, X:pd.DataFrame, y:pd.DataFrame, label_data:str):
@@ -110,3 +112,71 @@ def visualizing_model_performance(model:any, model_name:str, X:pd.DataFrame, y:p
     plt.title(f"{model_name} - Real vs Predicted Prices - {label_data}")
     plt.legend()
     plt.grid(True)
+
+
+def graphing_models_results(base_model_metrics:tuple, model_01_metrics:tuple, model_02_metrics:tuple):
+    models_results = {
+        "Model": [BASE_MODEL_NAME, MODEL_01_NAME, MODEL_02_NAME],
+        "Root Mean Squared Error": [base_model_metrics[0], model_01_metrics[0], model_02_metrics[0]],
+        "Squared R": [base_model_metrics[1], model_01_metrics[1], model_02_metrics[1]]
+    }
+
+    df_results = pd.DataFrame(models_results).sort_values("Root Mean Squared Error", ascending=False)
+
+    plt.figure(figsize=(8, 4))
+    barplot = sns.barplot(
+        x="Root Mean Squared Error", 
+        y="Model", 
+        data=df_results,
+        hue="Model",
+        palette="Reds_r",
+        legend=False,
+        order=df_results["Model"].tolist(),
+        hue_order=df_results["Model"].tolist()
+    )
+
+    for i, row in df_results.reset_index(drop=True).iterrows():
+        plt.text(
+            x=row["Root Mean Squared Error"] / 2,
+            y=i,
+            s=f"RMSE = {row['Root Mean Squared Error']:.4f}",
+            ha="center",
+            va="center",
+            fontsize=10,
+            color="black"
+        )
+
+    plt.title("Comparison of RMSE between models")
+    plt.xlabel("Root Mean Squared Error (Lower is better)")
+    plt.ylabel("Model")
+
+
+    df_results = pd.DataFrame(models_results).sort_values("Squared R", ascending=False)
+
+    plt.figure(figsize=(8, 4))
+    barplot = sns.barplot(
+        x="Squared R", 
+        y="Model", 
+        data=df_results,
+        hue="Model",
+        palette="Greens_r",
+        legend=False,
+        order=df_results["Model"].tolist(),        # Orden exacto del DataFrame
+        hue_order=df_results["Model"].tolist()     # Mismo orden para colores
+    )
+
+    for i, row in df_results.reset_index(drop=True).iterrows():
+        plt.text(
+            x=row["Squared R"] / 2,
+            y=i,
+            s=f"R² = {row['Squared R']:.4f}",
+            ha="center",
+            va="center",
+            fontsize=10,
+            color="black"
+        )
+
+    plt.title("Comparison of Squared R between models")
+    plt.xlabel("Squared R (Closer to 1 is better)")
+    plt.ylabel("Model")
+    plt.axvline(x=1, color='red', linestyle='--', alpha=0.3)

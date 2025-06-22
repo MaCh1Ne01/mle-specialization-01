@@ -84,7 +84,7 @@ El conjunto de datos fue extraído de la página web "EaseMyTrip", la cual conti
 <img src="https://drive.google.com/uc?export=view&id=1-BJGFQr32BeK_ASnEyaYxt8Uw__ezk_S" allow="autoplay">
 
 ## Resultados con métricas de evaluación offline
-PENDING
+<img src="https://drive.google.com/uc?export=view&id=19u7vcUN5YNxUc9f8FGA2tGisMSFEud1t" allow="autoplay">
 
 ## Conclusiones
 PENDING

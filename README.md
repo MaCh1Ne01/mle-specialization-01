@@ -81,7 +81,7 @@ El conjunto de datos fue extraído de la página web "EaseMyTrip", la cual conti
 | Price            | Precio en rupias indias del ticket de avión, es la variable a predecir.                                                |
 
 ## Model Card
-<img src="https://drive.google.com/uc?export=view&id=1e0gDAo5SSt8ucAHay-MO2gdFlHoCk7ti" allow="autoplay">
+<img src="https://drive.google.com/uc?export=view&id=1-BJGFQr32BeK_ASnEyaYxt8Uw__ezk_S" allow="autoplay">
 
 ## Resultados con métricas de evaluación offline
 PENDING

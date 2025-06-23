@@ -54,6 +54,9 @@ Este proyecto corresponde al curso MLE 1 de la Especialización MLE.
     │   ├── predict.py          <- Code to run model inference with trained models          
     │   └── train.py            <- Code to train models
     │
+    |── utils
+    |   └── helpers.py          <- Customized functions
+    |
     └── plots.py                <- Code to create visualizations
 ```
 

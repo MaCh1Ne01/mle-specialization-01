@@ -11,6 +11,31 @@ PYTHON_INTERPRETER = python
 #################################################################################
 
 
+## Automating Deployment
+.PHONY: all data features train predict
+
+all: dataset features train predict 
+
+dataset:
+	python3 -m package_mles_01.dataset
+
+features:
+	python3 -m package_mles_01.features
+
+train:
+	python3 -m package_mles_01.modeling.train
+
+predict:
+	python3 -m package_mles_01.modeling.predict
+
+
+## Deleting Artifacts
+.PHONY: cleaning
+cleaning:
+	rm -rf data/processed/*
+	rm -rf models/*
+
+
 ## Install Python dependencies
 .PHONY: requirements
 requirements:

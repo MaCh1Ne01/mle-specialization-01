@@ -12,7 +12,7 @@ PYTHON_INTERPRETER = python
 
 
 ## Automating Deployment
-.PHONY: all data features train predict
+.PHONY: all dataset features train predict
 
 all: dataset features train predict 
 

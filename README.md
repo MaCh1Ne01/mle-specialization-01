@@ -90,4 +90,14 @@ El conjunto de datos fue extraído de la página web "EaseMyTrip", la cual conti
 <img src="https://drive.google.com/uc?export=view&id=19u7vcUN5YNxUc9f8FGA2tGisMSFEud1t" allow="autoplay">
 
 ## Conclusiones
-PENDING
+* El Linear Regressor sin tunning de hiperparámetros obtuvo un R² = 0.9097, por lo que se considera útil como referencia, además un alto valor del Squared Error en el modelo baseline indica que es muy viable trabajar con el dataset obtenido.
+
+* Así mismo, el Linear Regressor es el modelo más estable, ya que tanto en la etapa de entrenamiento como en la de prueba obtuvo rendimientos en RMSE cercanos a 6820 y R² = 0.9097, aunque es el menos preciso.
+
+* Dado que los precios tienen una gran dispersión (mínimo = 1105, media = 20889, std = 22697 y máximo = 123071), los RMSE obtenidos en la etapa de prueba por los mejores modelos (3785.9814 y 3416.2479) son bajos en comparación a la desviación estandar (alrededor de 6 veces mayor) y la media (más de 5 veces mayor), por lo que se podría decir que ambos modelos son buenos considerando además que se pueden optimizar con un adecuado tunning de hiperparámetros.
+
+* Además, al entrenarse los 3 modelos sin tunning de hiperparámetros y al obtener los mejores rendimientos el K-Neighbors Regressor y el Decission Tree Regressor, permite inferir que los datos tienen patrones subyacentes no lineales que el Linear Regressor no puede capturar.
+
+* Por otro lado, se observa overfitting en el Decission Tree Regressor, ya que en el entrenamiento se obtuvo un RMSE = 615.93 y R² = 0.9993, mientras que en la prueba solo alcanzo un RMSE = 3416.25 (más de 5 veces peor) y R² = 0.9773, por ende el modelo podría estar generalizando mal, y a pesar de ser el más exacto, lo impredecible que podría ser con nuevos datos significaría un riesgo en un ambiente de Producción.
+
+* Finalmente, el mejor modelo hasta el momento es el K-Neighbors Regressor, ya que a pesar de obtener unas métricas ligeramente por debajo que el Decission Tree Regressor, no presenta overfitting, por ende, es el más equilibrado e idóneo en un entorno productivo.

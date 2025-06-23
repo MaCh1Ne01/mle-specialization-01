@@ -101,3 +101,6 @@ El conjunto de datos fue extraído de la página web "EaseMyTrip", la cual conti
 * Por otro lado, se observa overfitting en el Decission Tree Regressor, ya que en el entrenamiento se obtuvo un RMSE = 615.93 y R² = 0.9993, mientras que en la prueba solo alcanzo un RMSE = 3416.25 (más de 5 veces peor) y R² = 0.9773, por ende el modelo podría estar generalizando mal, y a pesar de ser el más exacto, lo impredecible que podría ser con nuevos datos significaría un riesgo en un ambiente de Producción.
 
 * Finalmente, el mejor modelo hasta el momento es el K-Neighbors Regressor, ya que a pesar de obtener unas métricas ligeramente por debajo que el Decission Tree Regressor, no presenta overfitting, por ende, es el más equilibrado e idóneo en un entorno productivo.
+
+## Manual de ejecución
+Revisar las instrucciones en la [carpeta de referencias.](./references)
